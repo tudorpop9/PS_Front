@@ -2,10 +2,11 @@
 <html lang="zxx">
 
 <head>
+    <add name="Access-Control-Allow-Origin" value="*"/>
     <title>VoteApp</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-devide-width, initial-scale=1.0">
-    <script src="libs/js/angular.js"></script>
+    <script src="js/libs/angular.js"></script>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -16,7 +17,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+    <script src="js/LoginController.js"></script>
+    <script src="js/LogginService.js"></script>
     <style>
         body, html{
             background-image: url("images/stamp.jpg");
@@ -32,7 +34,7 @@
 
 </head>
 
-<body class="view">
+<body class="view" ng-app="LoginControllerModule">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
             <img src="images/stema-romaniei-1200x800_c.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="Logo" style="width: 50px;">
@@ -61,7 +63,7 @@
         </div>
     </nav>
     <br>
-    <div class="containter bgVote">
+    <div class="containter" ng-controller="LoginController">
 
         <div class="row">
             <div class="container col-sm-5">
@@ -73,20 +75,21 @@
                         <form>
                             <div class="form-group was-validated">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
+                                <input ng-model="email" type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
                             </div>
                             
                             <div class="form-group">
                                 <label for="pwd">Password</label>
-                                <input type="password" class="form-control" name="" id="" placeholder="password">
+                                <input ng-model="password" type="password" class="form-control" name="" id="" placeholder="password">
                                 <div class="invalid-feedback">Please fill out this filed</div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Log-In</button>
+                            <button type="submit" class="btn btn-primary" ng-click="loginWithEmail(email, password)">Log-In</button>
                         </form>
                     </div>
                     <div class="card-footer text-muted">
                         <a href="register.html" class="col-sm-2">Register</a>
                         <a href="" class="col-sm-2">Forgot password</a>
+                        <p>{{msg}}</p>
                 </div>
             </div>
         </div>
@@ -99,17 +102,19 @@
                 <div class="card-body">
                  <form>
                         <div class="form-group">
-                            <label for="cnp">Personal number code</label>
-                            <input type="number" class="form-control" name="" id="" aria-describedby="" placeholder="Enter Cnp">
+                            <label for="cnp">Personal Numeric Code</label>
+                            <input ng-model="cnp" type="number" class="form-control" name="" id="" aria-describedby="" placeholder="Enter Cnp">
                         </div>
                     
-                         <button type="submit" class="btn btn-primary">Enter</button>
+                         <button type="submit" class="btn btn-primary" ng-click="loginWithCnp(cnp)">Enter</button>
                  </form>
                 </div>
                 <div class="card-footer text-muted">
                     <p>You must be over 18 year old in order to vote</p>
                     <p>The vote is unique, secret and anonymous </p>
+                    <p>{{msg}}</p>
                 </div>
+                
             </div>
         </div>
     </div>
