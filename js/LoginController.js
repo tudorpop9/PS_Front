@@ -1,16 +1,22 @@
 
 var login = angular.module('LoginControllerModule',[]);
 
-login.controller('LoginController', function ($scope, $http){
+login.controller('LoginController', function ($scope, $http, $window){
         var url = 'http://localhost:8081//login/';
         var onSuccess = function(response){
             var respIn = response.data;
             if(respIn){
                 if(respIn.role){
                     //Admin/member
-                    $scope.msg = 'Success ' + respIn.role;
+                    if(respIn.role == 'ADMIN'){
+                        $window.location.href = "adminIndex.html";
+                    }else if(respIn.role == 'MEMBER'){
+                        $window.location.href = "memberIndex.html";
+                    }else{
+                        $window.location.href = "citizenIndex.html";
+                    }
                 }else{
-                    $scope.msg = 'Success ' + respIn.cnp;
+                    $window.location.href = "citizenIndex.html";
                 }
                   
             }else{
