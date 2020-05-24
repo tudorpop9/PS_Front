@@ -17,12 +17,27 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
+    <style>
+        body, html{
+            background-image: url("images/stamp.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;
+            margin: auto;
+        }
+        div{
+            opacity: 0.97;
+        }
+    </style>
 
 </head>
 
-<body>
+<body class="view">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">OnlinePoll</a>
+        <a class="navbar-brand" href="index.html">
+            <img src="images/stema-romaniei-1200x800_c.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="Logo" style="width: 50px;">
+            OnlinePoll
+        </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,69 +48,72 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <input class="form-control mr-sm-2" type="text" placeholder="I'm here to look good">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
+    <br>
+    <div class="containter bgVote">
 
-    <div class="row">
+        <div class="row">
+            <div class="container col-sm-5">
+                <div class="card">
+                    <div class="card-header">
+                        Log-In
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group was-validated">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pwd">Password</label>
+                                <input type="password" class="form-control" name="" id="" placeholder="password">
+                                <div class="invalid-feedback">Please fill out this filed</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Log-In</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <a href="register.html" class="col-sm-2">Register</a>
+                        <a href="" class="col-sm-2">Forgot password</a>
+                </div>
+            </div>
+        </div>
+    
         <div class="container col-sm-5">
             <div class="card">
                 <div class="card-header">
-                    Log-In
+                    Vote without logging in
                 </div>
                 <div class="card-body">
-                    <form>
-                   <div class="form-group was-validated">
-                       <label for="email">Email</label>
-                       <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
-                    </div>
+                 <form>
+                        <div class="form-group">
+                            <label for="cnp">Personal number code</label>
+                            <input type="number" class="form-control" name="" id="" aria-describedby="" placeholder="Enter Cnp">
+                        </div>
                     
-                    <div class="form-group">
-                        <label for="pwd">Password</label>
-                        <input type="password" class="form-control" name="" id="" placeholder="password">
-                        <div class="invalid-feedback">Please fill out this filed</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Log-In</button>
-                </form>
-            </div>
-            <div class="card-footer text-muted">
-                <a href="register.html" class="col-sm-2">Register</a>
-                <a href="" class="col-sm-2">Forgot password</a>
+                         <button type="submit" class="btn btn-primary">Enter</button>
+                 </form>
+                </div>
+                <div class="card-footer text-muted">
+                    <p>You must be over 18 year old in order to vote</p>
+                    <p>The vote is unique, secret and anonymous </p>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="container col-sm-5">
-        <div class="card">
-            <div class="card-header">
-                Vote without logging in
-            </div>
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <label for="cnp">Personal number code</label>
-                        <input type="number" class="form-control" name="" id="" aria-describedby="" placeholder="Enter Cnp">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Enter</button>
-                </form>
-            </div>
-            <div class="card-footer text-muted">
-                <p>You must be over 18 year old to vote</p>
-                <p>The vote is unique, secret and anonymous </p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-
-</div>    
-    
-    
 </body>
+<footer>
+
+</footer>
