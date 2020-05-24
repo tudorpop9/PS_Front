@@ -21,7 +21,81 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">OnlinePoll</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
+    <div class="row">
+        <div class="container col-sm-5">
+            <div class="card">
+                <div class="card-header">
+                    Log-In
+                </div>
+                <div class="card-body">
+                    <form>
+                   <div class="form-group was-validated">
+                       <label for="email">Email</label>
+                       <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pwd">Password</label>
+                        <input type="password" class="form-control" name="" id="" placeholder="password">
+                        <div class="invalid-feedback">Please fill out this filed</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log-In</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="register.html" class="col-sm-2">Register</a>
+                <a href="" class="col-sm-2">Forgot password</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container col-sm-5">
+        <div class="card">
+            <div class="card-header">
+                Vote without logging in
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="cnp">Personal number code</label>
+                        <input type="number" class="form-control" name="" id="" aria-describedby="" placeholder="Enter Cnp">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enter</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                <p>You must be over 18 year old to vote</p>
+                <p>The vote is unique, secret and anonymous </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
 
-
+</div>    
+    
+    
 </body>
