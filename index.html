@@ -75,12 +75,12 @@
                         <form>
                             <div class="form-group was-validated">
                                 <label for="email">Email</label>
-                                <input ng-model="email" type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
+                                <input ng-model="email" type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="pwd">Password</label>
-                                <input ng-model="password" type="password" class="form-control" name="" id="" placeholder="password">
+                                <input ng-model="password" type="password" class="form-control" name="" id="" placeholder="password" required>
                                 <div class="invalid-feedback">Please fill out this filed</div>
                             </div>
                             <button type="submit" class="btn btn-primary" ng-click="loginWithEmail(email, password)">Log-In</button>
@@ -103,7 +103,7 @@
                  <form>
                         <div class="form-group">
                             <label for="cnp">Personal Numeric Code</label>
-                            <input ng-model="cnp" type="number" class="form-control" name="" id="" aria-describedby="" placeholder="Enter Cnp">
+                            <input ng-model="cnp" type="number" class="form-control" name="" id="" aria-describedby="" placeholder="Enter Cnp" required>
                         </div>
                     
                          <button type="submit" class="btn btn-primary" ng-click="loginWithCnp(cnp)">Enter</button>

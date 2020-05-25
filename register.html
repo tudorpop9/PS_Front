@@ -5,7 +5,7 @@
     <title>VoteApp</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-devide-width, initial-scale=1.0">
-    <script src="libs/js/angular.js"></script>
+    <script src="js/libs/angular.js"></script>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -16,7 +16,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+    <script src="js/RegisterController.js"></script>
+    
     <style>
         body, html{
             background-image: url("images/stamp.jpg");
@@ -32,7 +33,7 @@
 
 </head>
 
-<body class="view" ng-app>
+<body class="view" ng-app = "RegisterControllerModule">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
             <img src="images/stema-romaniei-1200x800_c.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="Logo" style="width: 50px;">
@@ -60,6 +61,49 @@
             </form>
         </div>
     </nav>
+    <br>
+    <div ng-controller="RegisterController" class="container col-sm-5">
+
+        <div class="card">
+            <div class="card-header">
+                Register Form
+            </div>
+            <div class="card-body">
+                <form>
+                   <div class="form-group">
+                     <label for="cnp">Cnp</label>
+                     <input ng-model="cnp" type="number" class="form-control" placeholder="Personal numeric code" required>   
+                   </div>
+                   <div class="form-group">
+                    <label for="email">Email</label>
+                    <input ng-model="email" type="email" class="form-control"  placeholder="Email" required>   
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input ng-model="password" type="password" class="form-control" id="thePassword"  placeholder="Enter password" required>   
+                  </div>
+                  <div class="form-group">
+                    <label for="confpassword">Confirm Password</label>
+                    <input ng-model="confpassword" type="password" class="form-control" id="theConfPassword"  placeholder="Confirm password" required>   
+                    <p>{{pwMatch}}</p>
+                </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input ng-model="phone" type="" class="form-control"  placeholder="Phone Number">   
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary" ng-click="checkForm(cnp, email, password, confpassword, phone)">Register</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                <p>{{succsessMsg}}</p>
+                <p>{{failureMsg}}</p>
+            </div>    
+                
+        </div>
+
+    </div>
+    <br>
     
 </body>
 
